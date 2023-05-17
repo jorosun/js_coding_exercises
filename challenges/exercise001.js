@@ -6,13 +6,18 @@
 
 export function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  return word.string(0.1).toUpperCase() + word.string(1, word.length);
+  return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
 }
 
 export function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
+
+  return (
+    firstName.substring(0, 1).toUpperCase() +
+    "." +
+    lastName.substring(0, 1).toUpperCase()
+  );
 }
 
 export function addVAT(originalPrice, vatRate) {
