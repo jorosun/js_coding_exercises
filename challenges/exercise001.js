@@ -23,18 +23,38 @@ export function generateInitials(firstName, lastName) {
 export function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
+
+  console.log(originalPrice + (originalPrice / 100) * vatRate);
+
+  const newPrice = originalPrice + (originalPrice / 100) * vatRate;
+
+  console.log(newPrice);
+
+  if (Number.isInteger(newPrice)) {
+    return newPrice;
+  } else {
+    return parseFloat(newPrice.toFixed(2));
+  }
 }
 
 export function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+
+  const newPrice = originalPrice - (originalPrice / 100) * reduction;
+  return parseFloat(newPrice.toFixed(2));
 }
 
 export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  // Add your code here!
+
+  const mid = Math.round(str.length / 2);
+
+  if (str.length % 2 == 0) {
+    return str.substring(mid - 1, mid + 1);
+  } else {
+    return str.substring(mid - 1, mid);
+  }
 }
 
 export function reverseWord(word) {
