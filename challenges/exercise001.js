@@ -24,11 +24,7 @@ export function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
 
-  console.log(originalPrice + (originalPrice / 100) * vatRate);
-
   const newPrice = originalPrice + (originalPrice / 100) * vatRate;
-
-  console.log(newPrice);
 
   if (Number.isInteger(newPrice)) {
     return newPrice;
@@ -59,12 +55,12 @@ export function getMiddleCharacter(str) {
 
 export function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+
+  return word.split("").reverse().join("");
 }
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
 }
 
 export function countLinuxUsers(users) {
