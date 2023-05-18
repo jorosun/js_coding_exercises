@@ -1,6 +1,17 @@
 export function getFillings(sandwich) {
 	if (sandwich === undefined) throw new Error('ingredients is required');
-	// Your code here!
+    const fillingArray = [];
+	let fillingItem = '';
+
+	for (let i= 0; i < (sandwich["fillings"].length); i++) {
+
+			fillingItem = sandwich["fillings"][i];
+
+			fillingArray.push(fillingItem);
+		}
+		
+		console.log(fillingArray);
+		return fillingArray;
 }
 
 export function isFromManchester(person) {
