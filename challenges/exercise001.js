@@ -87,7 +87,6 @@ export function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
   let total = 0;
   for (let i = 0; i < scores.length; i++) {
-    console.log(total, scores[i]);
     total = total + scores[i];
   }
   let mean = total / scores.length;
@@ -100,5 +99,29 @@ export function getMeanScore(scores) {
 
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
+  
+  let  div3 = false;
+  let  div5 = false;
+  
+	if  (n % 3 === 0 ) {
+		 div3=true;
+  }
+
+	if (n % 5 === 0) {
+	   div5=true;
+  }
+
+  console.log (div3);
+  console.log (div5);
+  
+   if ((div3 === true) && (div5 === true)) {
+	  return ("fizzbuzz");
+   } else if (div3 === true) {
+		return ("fizz");
+	} else if (div5 === true) {
+		return ("buzz");
+   } else {
+    return(n);
+   }
 }
+
