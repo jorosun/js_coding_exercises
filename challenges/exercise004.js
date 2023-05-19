@@ -23,7 +23,13 @@ export function findNamesBeginningWith(names, char) {
 
 export function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  // Your code here
+  let verbsArr = [];
+  for (let i = 0; i < words.length; i += 1) {
+    if (words[i].slice(0, 3) === "to ") {
+      verbsArr.push(words[i]);
+    }
+  }
+  return verbsArr;
 }
 
 export function getIntegers(nums) {
