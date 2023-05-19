@@ -1,12 +1,31 @@
 export function getSquares(nums) {
 	if (nums === undefined) throw new Error('nums is required');
-	// Your code here!
+	let sqrNums = [];
+	for (let i = 0; i < nums.length; i += 1) {
+		sqrNums[i] = (nums[i]*nums[i]);
+	}
+  return sqrNums;
 }
 
 export function camelCaseWords(words) {
 	if (words === undefined) throw new Error('words is required');
-	// Your code here!
+
+	let camelWords = "";
+
+
+	for (let i = 0; i < words.length; i += 1) {
+	
+		if ( i === 0) {
+			camelWords = words[i];
+		} else {
+			let word = words[i];
+			camelWords = camelWords + (word.charAt(0).toUpperCase() + word.slice(1));
+		}
+	}	
+	return camelWords;			
 }
+
+
 
 export function getTotalSubjects(people) {
 	if (people === undefined) throw new Error('people is required');

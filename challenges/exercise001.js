@@ -62,9 +62,7 @@ export function reverseWord(word) {
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
 
-  let i = 0;
-
-  for (i = 0; i < words.length; i += 1) {
+  for (let i = 0; i < words.length; i += 1) {
     words[i] = reverseWord(words[i]);
   }
   return words;
@@ -72,10 +70,10 @@ export function reverseAllWords(words) {
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  let i = 0;
+  
   let numberUsers = 0;
 
-  for (i = 0; i < users.length; i += 1) {
+  for (let i = 0; i < users.length; i += 1) {
     if (users[i]["type"] === "Linux") {
       numberUsers = numberUsers + 1;
     }
