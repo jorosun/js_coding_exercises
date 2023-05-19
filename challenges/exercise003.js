@@ -56,5 +56,21 @@ export function checkIngredients(menu, ingredient) {
 export function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  // Your code here!
+
+  let dupArr = [];
+  for (let i = 0; i < arr1.length; i += 1) {
+    for (let j = 0; j < arr2.length; j += 1) {
+      if (arr1[i] === arr2[j]) {
+        dupArr.push(arr2[j]);
+      }
+    }
+  }
+  let uniqueArr = [];
+  dupArr.forEach((element) => {
+    if (!uniqueArr.includes(element)) {
+      uniqueArr.push(element);
+    }
+  });
+
+  return uniqueArr.sort();
 }
