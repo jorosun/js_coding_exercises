@@ -45,7 +45,23 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  // Your code here
+  let cityNames = [];
+  let userDataArr = [];
+  let userDataCityArr = [];
+
+  for (let i = 0; i < users.length; i += 1) {
+    userDataArr = users[(i, "data")];
+    console.log(userDataArr);
+    for (let j = 0; j < userDataArr.length; j += 1) {
+      userDataCityArr = users[(i, j["city"])];
+      console.log(userDataArr);
+      for (let k = 0; k < userDataCityArr.length; k += 1) {
+        console.log(users[(i, j[k[("id", "displayName")]])]);
+        cityNames.push(users[(i, j[k[("id", "displayname")]])]);
+      }
+    }
+  }
+  return cityNames;
 }
 
 export function getSquareRoots(nums) {
@@ -66,7 +82,13 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
+  let containingArr = [];
+  for (let i = 0; i < sentences.length; i += 1) {
+    if (sentences[i].toUpperCase().includes(str.toUpperCase())) {
+      containingArr.push(sentences[i]);
+    }
+  }
+  return containingArr;
 }
 
 export function getLongestSides(triangles) {
