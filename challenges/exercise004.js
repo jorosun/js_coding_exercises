@@ -49,12 +49,11 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  const containingArr = [];
-  sentences.forEach(function (sentence) {
-    if (sentence.toUpperCase().includes(str.toUpperCase())) {
-      containingArr.push(sentence);
-    }
-  });
+
+  const containingArr = sentences.filter((sentence) =>
+    sentence.toUpperCase().includes(str.toUpperCase())
+  );
+
   return containingArr;
 }
 
