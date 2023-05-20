@@ -19,27 +19,36 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  const intArr = [];
-  nums.forEach(function (num) {
-    if (Number.isInteger(num)) {
-      intArr.push(num);
-    }
-  });
-  return intArr;
+  const int = nums.filter((num) => Number.isInteger(num));
+  return int;
 }
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  const cityNames = [];
-  users.forEach(function (user) {
-    cityNames.push(user["data"]["city"]["displayName"]);
+
+  const cityNames = users.map(function (user) {
+    const cityName = user.data.city.displayName;
+    return cityName;
   });
   return cityNames;
 }
 
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  const sqrtNums = [];
+
+  const sqrtNums = nums.map(function (num) {
+    let newNum = Math.sqrt(num);
+    if (Number.isInteger(newNum)) {
+      return newNum;
+    } else {
+      newNum = parseFloat(newNum.toFixed(2));
+      return newNum;
+    }
+  });
+  console.log(sqrtNums);
+  return sqrtNums;
+
+  /* const sqrtNums = [];
   nums.forEach(function (num) {
     const newNum = Math.sqrt(num);
     if (Number.isInteger(newNum)) {
@@ -49,6 +58,7 @@ export function getSquareRoots(nums) {
     }
   });
   return sqrtNums;
+  */
 }
 
 export function findSentencesContaining(sentences, str) {
