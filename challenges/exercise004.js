@@ -25,7 +25,6 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-
   const cityNames = users.map(function (user) {
     const cityName = user.data.city.displayName;
     return cityName;
@@ -35,7 +34,6 @@ export function getCities(users) {
 
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-
   const sqrtNums = nums.map(function (num) {
     let newNum = Math.sqrt(num);
     if (Number.isInteger(newNum)) {
@@ -45,20 +43,7 @@ export function getSquareRoots(nums) {
       return newNum;
     }
   });
-  console.log(sqrtNums);
   return sqrtNums;
-
-  /* const sqrtNums = [];
-  nums.forEach(function (num) {
-    const newNum = Math.sqrt(num);
-    if (Number.isInteger(newNum)) {
-      sqrtNums.push(newNum);
-    } else {
-      sqrtNums.push(parseFloat(newNum.toFixed(2)));
-    }
-  });
-  return sqrtNums;
-  */
 }
 
 export function findSentencesContaining(sentences, str) {
