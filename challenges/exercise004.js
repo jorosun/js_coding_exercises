@@ -34,12 +34,12 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  let intArr = [];
-  for (let i = 0; i < nums.length; i += 1) {
-    if (Number.isInteger(nums[i])) {
-      intArr.push(nums[i]);
+  const intArr = [];
+  nums.forEach(function (num) {
+    if (Number.isInteger(num)) {
+      intArr.push(num);
     }
-  }
+  });
   return intArr;
 }
 
