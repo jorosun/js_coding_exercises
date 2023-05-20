@@ -60,16 +60,9 @@ export function findSentencesContaining(sentences, str) {
 
 export function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  const longestArr = [];
-  let longest = 0;
-  triangles.forEach(function (triangle) {
-    longest = 0;
-    triangle.forEach(function (side) {
-      if (longest < side) {
-        longest = side;
-      }
-    });
-    longestArr.push(longest);
+  const longestArr = triangles.map(function (triangle) {
+    const longest = Math.max.apply(null, triangle);
+    return longest;
   });
   return longestArr;
 }
