@@ -46,20 +46,9 @@ export function getIntegers(nums) {
 export function getCities(users) {
   if (!users) throw new Error("users is required");
   let cityNames = [];
-  let userDataArr = [];
-  let userDataCityArr = [];
 
   for (let i = 0; i < users.length; i += 1) {
-    userDataArr = users[(i, "data")];
-    console.log(userDataArr);
-    for (let j = 0; j < userDataArr.length; j += 1) {
-      userDataCityArr = users[(i, j["city"])];
-      console.log(userDataArr);
-      for (let k = 0; k < userDataCityArr.length; k += 1) {
-        console.log(users[(i, j[k[("id", "displayName")]])]);
-        cityNames.push(users[(i, j[k[("id", "displayname")]])]);
-      }
-    }
+    cityNames.push(users[i]["data"]["city"]["displayName"]);
   }
   return cityNames;
 }
@@ -103,7 +92,6 @@ export function getLongestSides(triangles) {
         longest = triangles[i][j];
       }
     }
-    console.log(longest);
     longestArr.push(longest);
   }
   return longestArr;
