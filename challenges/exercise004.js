@@ -1,28 +1,20 @@
 export function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   const smallNums = nums.filter((n) => n < 1);
-  console.log(smallNums);
   return smallNums;
 }
 
 export function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-
   const namesBegin = names.filter((name) => name.startsWith(char));
-
   return namesBegin;
 }
 
 export function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  const verbsArr = [];
-  words.forEach(function (word) {
-    if (word.slice(0, 3) === "to ") {
-      verbsArr.push(word);
-    }
-  });
-  return verbsArr;
+  const verbs = words.filter((word) => word.slice(0, 3) === "to ");
+  return verbs;
 }
 
 export function getIntegers(nums) {
