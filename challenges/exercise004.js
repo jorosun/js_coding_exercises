@@ -54,16 +54,15 @@ export function getCities(users) {
 
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  let sqrtNums = [];
-  let newNum = "";
-  for (let i = 0; i < nums.length; i += 1) {
-    newNum = Math.sqrt(nums[i]);
+  const sqrtNums = [];
+  nums.forEach(function (num) {
+    const newNum = Math.sqrt(num);
     if (Number.isInteger(newNum)) {
-      sqrtNums[i] = newNum;
+      sqrtNums.push(newNum);
     } else {
-      sqrtNums[i] = parseFloat(newNum.toFixed(2));
+      sqrtNums.push(parseFloat(newNum.toFixed(2)));
     }
-  }
+  });
   return sqrtNums;
 }
 
