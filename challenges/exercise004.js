@@ -8,13 +8,10 @@ export function findSmallNums(nums) {
 export function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  const namesBegArr = [];
-  names.forEach(function (name) {
-    if (name.startsWith(char)) {
-      namesBegArr.push(name);
-    }
-  });
-  return namesBegArr;
+
+  const namesBegin = names.filter((name) => name.startsWith(char));
+
+  return namesBegin;
 }
 
 export function findVerbs(words) {
