@@ -45,11 +45,10 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  let cityNames = [];
-
-  for (let i = 0; i < users.length; i += 1) {
-    cityNames.push(users[i]["data"]["city"]["displayName"]);
-  }
+  const cityNames = [];
+  users.forEach(function (user) {
+    cityNames.push(user["data"]["city"]["displayName"]);
+  });
   return cityNames;
 }
 
