@@ -1,4 +1,5 @@
 export function findSmallNums(nums) {
+  if (!nums) throw new Error("nums is required");
   const smallNumsArr = [];
   nums.forEach(function (num) {
     if (num < 1) {
@@ -11,23 +12,23 @@ export function findSmallNums(nums) {
 export function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  let namesBegArr = [];
-  for (let i = 0; i < names.length; i += 1) {
-    if (names[i].startsWith(char)) {
-      namesBegArr.push(names[i]);
+  const namesBegArr = [];
+  names.forEach(function (name) {
+    if (name.startsWith(char)) {
+      namesBegArr.push(name);
     }
-  }
+  });
   return namesBegArr;
 }
 
 export function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  let verbsArr = [];
-  for (let i = 0; i < words.length; i += 1) {
-    if (words[i].slice(0, 3) === "to ") {
-      verbsArr.push(words[i]);
+  const verbsArr = [];
+  words.forEach(function (word) {
+    if (word.slice(0, 3) === "to ") {
+      verbsArr.push(word);
     }
-  }
+  });
   return verbsArr;
 }
 
