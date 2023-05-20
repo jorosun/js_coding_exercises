@@ -82,9 +82,7 @@ export function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   const longestArr = [];
   let longest = 0;
-
   triangles.forEach(function (triangle) {
-    console.log(triangle);
     longest = 0;
     triangle.forEach(function (side) {
       if (longest < side) {
