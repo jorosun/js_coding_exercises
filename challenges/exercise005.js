@@ -45,14 +45,10 @@ export const sumArrays = (arrs) => {
 
 export const arrShift = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
-  const numString = arr.toString();
-  console.log(numString);
-  // const arrNumber = parseInt(numString);
-  const newNumber = reverseNumber(parseInt(numString), 10);
-  console.log(newNumber);
-  const newArr = newNumber.split("");
-  console.log(newArr);
-  return newArr;
+  const temp = arr[0];
+  arr[0] = arr[arr.length - 1];
+  arr[arr.length - 1] = temp;
+  return arr;
 };
 
 export const findNeedle = (haystack, searchTerm) => {
