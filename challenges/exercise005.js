@@ -18,13 +18,15 @@ export const count1sand0s = (str) => {
     const char = str[i];
     frequencies[char] += 1;
   }
-  console.log(frequencies);
   return frequencies;
 };
 
 export const reverseNumber = (n) => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+
+  const reverse = (num) =>
+    parseInt(String(num).split("").reverse().join(""), 10);
+  return reverse;
 };
 
 export const sumArrays = (arrs) => {
