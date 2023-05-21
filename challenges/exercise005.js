@@ -24,19 +24,35 @@ export const count1sand0s = (str) => {
 export const reverseNumber = (n) => {
   if (n === undefined) throw new Error("n is required");
 
-  const reverse = (num) =>
+  const revNum = (num) =>
     parseInt(String(num).split("").reverse().join(""), 10);
-  return reverse;
+  const result = revNum(n);
+  return result;
 };
 
 export const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
-  // Your code here!
+  let total = 0;
+  arrs.forEach((arr) => {
+    let sum = 0;
+    arr.forEach((num) => {
+      sum += num;
+    });
+    total += sum;
+  });
+  return total;
 };
 
 export const arrShift = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
+  const numString = arr.toString();
+  console.log(numString);
+  // const arrNumber = parseInt(numString);
+  const newNumber = reverseNumber(parseInt(numString), 10);
+  console.log(newNumber);
+  const newArr = newNumber.split("");
+  console.log(newArr);
+  return newArr;
 };
 
 export const findNeedle = (haystack, searchTerm) => {
