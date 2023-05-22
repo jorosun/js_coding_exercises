@@ -12,6 +12,7 @@
  */
 export const sumMultiples = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
+
   let total = 0;
   arr.forEach((num) => {
     if (num % 3 === 0 || num % 5 === 0) {
@@ -28,6 +29,25 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  if (str === undefined) throw new Error("str is required");
+  let isValid = true;
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    switch (char) {
+      case "A":
+        break;
+      case "C":
+        break;
+      case "G":
+        break;
+      case "T":
+        break;
+      default:
+        isValid = false;
+        break;
+    }
+  }
+  return isValid;
 };
 
 /**
