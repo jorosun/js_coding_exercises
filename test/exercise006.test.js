@@ -73,3 +73,29 @@ describe("getComplementaryDNA", () => {
     expect(getComplementaryDNA("ACCTGTA")).toBe("TGGACAT");
   });
 });
+
+describe("isItPrime", () => {
+  test("it throws an error if not passed a number", () => {
+    expect(() => {
+      isItPrime();
+    }).toThrow("n is required");
+  });
+  test(" number 1 is not a prime number ", () => {
+    expect(isItPrime(1)).toBe(false);
+  });
+  test("returns false if not a prime number ", () => {
+    expect(isItPrime(6)).toBe(false);
+  });
+
+  test("returns true if a prime number ", () => {
+    expect(isItPrime(7)).toBe(true);
+  });
+
+  test("returns false if a 2 digitnon prime number ", () => {
+    expect(isItPrime(12)).toBe(false);
+  });
+
+  test("returns true if a 3 digit prime number ", () => {
+    expect(isItPrime(997)).toBe(true);
+  });
+});
