@@ -70,7 +70,7 @@ export function reverseAllWords(words) {
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  
+
   let numberUsers = 0;
 
   for (let i = 0; i < users.length; i += 1) {
@@ -97,29 +97,25 @@ export function getMeanScore(scores) {
 
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  
-  let  div3 = false;
-  let  div5 = false;
-  
-	if  (n % 3 === 0 ) {
-		 div3=true;
+
+  let div3 = false;
+  let div5 = false;
+
+  if (n % 3 === 0) {
+    div3 = true;
   }
 
-	if (n % 5 === 0) {
-	   div5=true;
+  if (n % 5 === 0) {
+    div5 = true;
   }
 
-  console.log (div3);
-  console.log (div5);
-  
-   if ((div3 === true) && (div5 === true)) {
-	  return ("fizzbuzz");
-   } else if (div3 === true) {
-		return ("fizz");
-	} else if (div5 === true) {
-		return ("buzz");
-   } else {
-    return(n);
-   }
+  if (div3 === true && div5 === true) {
+    return "fizzbuzz";
+  } else if (div3 === true) {
+    return "fizz";
+  } else if (div5 === true) {
+    return "buzz";
+  } else {
+    return n;
+  }
 }
-
