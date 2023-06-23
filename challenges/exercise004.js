@@ -1,49 +1,48 @@
 export function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  const smallNums = nums.filter((n) => n < 1);
-  return smallNums;
+  return nums.filter((n) => n < 1);
 }
 
 export function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  const namesBegin = names.filter((name) => name.startsWith(char));
-  return namesBegin;
+  return names.filter((name) => name.startsWith(char));
 }
 
 export function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  const verbs = words.filter((word) => word.slice(0, 3) === "to ");
-  return verbs;
+  return words.filter((word) => word.slice(0, 3) === "to ");
 }
 
 export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  const int = nums.filter((num) => Number.isInteger(num));
-  return int;
+  return nums.filter((num) => Number.isInteger(num));
 }
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  const cityNames = users.map(function (user) {
-    const cityName = user.data.city.displayName;
-    return cityName;
-  });
-  return cityNames;
+  return users.map((user) => user.data.city.displayName);
 }
 
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  const sqrtNums = nums.map(function (num) {
-    let newNum = Math.sqrt(num);
-    if (Number.isInteger(newNum)) {
-      return newNum;
-    } else {
-      newNum = parseFloat(newNum.toFixed(2));
-      return newNum;
-    }
-  });
-  return sqrtNums;
+
+  return nums.map((num) =>
+    Number.isInteger(Math.sqrt(num))
+      ? Math.sqrt(num)
+      : parseFloat(Math.sqrt(num).toFixed(2))
+  );
+
+  // const sqrtNums = nums.map(function (num) {
+  //   let newNum = Math.sqrt(num);
+  //   if (Number.isInteger(newNum)) {
+  //     return newNum;
+  //   } else {
+  //     newNum = parseFloat(newNum.toFixed(2));
+  //     return newNum;
+  //   }
+  // });
+  // return sqrtNums;
 }
 
 export function findSentencesContaining(sentences, str) {
