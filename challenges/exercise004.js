@@ -32,35 +32,18 @@ export function getSquareRoots(nums) {
       ? Math.sqrt(num)
       : parseFloat(Math.sqrt(num).toFixed(2))
   );
-
-  // const sqrtNums = nums.map(function (num) {
-  //   let newNum = Math.sqrt(num);
-  //   if (Number.isInteger(newNum)) {
-  //     return newNum;
-  //   } else {
-  //     newNum = parseFloat(newNum.toFixed(2));
-  //     return newNum;
-  //   }
-  // });
-  // return sqrtNums;
 }
 
 export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
 
-  const containingArr = sentences.filter((sentence) =>
+  return sentences.filter((sentence) =>
     sentence.toUpperCase().includes(str.toUpperCase())
   );
-
-  return containingArr;
 }
 
 export function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  const longestArr = triangles.map(function (triangle) {
-    const longest = Math.max.apply(null, triangle);
-    return longest;
-  });
-  return longestArr;
+  return triangles.map((triangle) => Math.max.apply(null, triangle));
 }
