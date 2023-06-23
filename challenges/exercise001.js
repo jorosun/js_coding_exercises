@@ -13,11 +13,9 @@ export function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
 
-  return (
-    firstName.substring(0, 1).toUpperCase() +
-    "." +
-    lastName.substring(0, 1).toUpperCase()
-  );
+  return `${firstName.charAt(0).toUpperCase()}.${lastName
+    .charAt(0)
+    .toUpperCase()}`;
 }
 
 export function addVAT(originalPrice, vatRate) {
@@ -26,11 +24,15 @@ export function addVAT(originalPrice, vatRate) {
 
   const newPrice = originalPrice + (originalPrice / 100) * vatRate;
 
-  if (Number.isInteger(newPrice)) {
-    return newPrice;
-  } else {
-    return parseFloat(newPrice.toFixed(2));
-  }
+  return Number.isInteger(newPrice)
+    ? newPrice
+    : parseFloat(newPrice.toFixed(2));
+
+  // if (Number.isInteger(newPrice)) {
+  //   return newPrice;
+  // } else {
+  //   return parseFloat(newPrice.toFixed(2));
+  // }
 }
 
 export function getSalePrice(originalPrice, reduction) {
@@ -61,24 +63,12 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-
-  for (let i = 0; i < words.length; i += 1) {
-    words[i] = reverseWord(words[i]);
-  }
-  return words;
+  return words.map((word) => reverseWord(word));
 }
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-
-  let numberUsers = 0;
-
-  for (let i = 0; i < users.length; i += 1) {
-    if (users[i]["type"] === "Linux") {
-      numberUsers = numberUsers + 1;
-    }
-  }
-  return numberUsers;
+  return users.filter((user) => user.type === "Linux").length;
 }
 
 export function getMeanScore(scores) {
@@ -98,22 +88,14 @@ export function getMeanScore(scores) {
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
 
-  let div3 = false;
-  let div5 = false;
+  const divisibleBy3 = n % 3 === 0;
+  const divisibleBy5 = n % 5 === 0;
 
-  if (n % 3 === 0) {
-    div3 = true;
-  }
-
-  if (n % 5 === 0) {
-    div5 = true;
-  }
-
-  if (div3 === true && div5 === true) {
+  if (divisibleBy3 && divisibleBy5) {
     return "fizzbuzz";
-  } else if (div3 === true) {
+  } else if (divisibleBy3 === true) {
     return "fizz";
-  } else if (div5 === true) {
+  } else if (divisibleBy5 === true) {
     return "buzz";
   } else {
     return n;

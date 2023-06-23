@@ -99,3 +99,26 @@ describe("isItPrime", () => {
     expect(isItPrime(997)).toBe(true);
   });
 });
+
+describe("createMatrix", () => {
+  test("it throws an error if not passed a number", () => {
+    expect(() => {
+      createMatrix();
+    }).toThrow("n is required");
+  });
+
+  test("it throws an error if not passed fill", () => {
+    expect(() => {
+      createMatrix(3);
+    }).toThrow("fill is required");
+  });
+
+  test("returns a 3 x 3 array containing foo", () => {
+    const matrix = [
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+    ];
+    expect(createMatrix(3, "foo").toBe(matrix));
+  });
+});
